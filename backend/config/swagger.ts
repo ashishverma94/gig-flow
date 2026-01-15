@@ -24,10 +24,14 @@ export const swaggerSpec = swaggerJSDoc({
     ],
     servers: [
       {
-        url: "http://localhost:3000",
-        description: "Local server",
+        url:
+          process.env.NODE_ENV === "production"
+            ? "https://gig-flow-nby5.onrender.com"
+            : "http://localhost:3000",
+        description: "API Server",
       },
     ],
+
     components: {
       securitySchemes: {
         cookieAuth: {
