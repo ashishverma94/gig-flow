@@ -17,8 +17,10 @@ app.use(cookieParser());
 // CORS [CROSS ORIGIN RESOURCE SHARING]
 app.use(
   cors({
-    origin: "*",
+    origin: true, 
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 // SWAGGER API DOCS
